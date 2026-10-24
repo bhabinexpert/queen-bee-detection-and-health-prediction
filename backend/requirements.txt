@@ -1,0 +1,9 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+numpy>=1.26
+torch>=2.2
+torchvision>=0.17
+librosa>=0.10
+soundfile>=0.12
+tensorflow>=2.15
+pillow>=10.0

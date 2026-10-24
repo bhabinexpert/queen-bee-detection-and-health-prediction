@@ -1,0 +1,64 @@
+@import "@fontsource-variable/inter/index.css";
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter Variable", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  background: #fef6e3;
+  color: #292524;
+}
+
+::selection {
+  background-color: #fcd34d;
+  color: #451a03;
+}
+
+:focus-visible {
+  outline: 2px solid #d97706;
+  outline-offset: 2px;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  background: #fdeecb;
+}
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+  animation: shimmer-slide 1.2s ease-in-out infinite;
+}
+@keyframes shimmer-slide {
+  100% { transform: translateX(100%); }
+}
+
+.eq-bar {
+  transform-origin: bottom;
+  animation: eq-bounce 0.7s ease-in-out infinite alternate;
+}
+@keyframes eq-bounce {
+  from { transform: scaleY(0.25); }
+  to { transform: scaleY(1); }
+}
+
+.honeycomb-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66 0 50 0 16l28-16 28 16v34zM28 134l-28-16V84l28-16 28 16v34z' fill='none' stroke='%23d97706' stroke-opacity='0.16' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 56px 100px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f59e0b #fef3c7;
+}
